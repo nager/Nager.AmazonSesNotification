@@ -10,7 +10,10 @@ namespace Nager.AmazonSesNotification
     {
         public async Task<SesWebhook> ProcessNotificationAsync(string json)
         {
-            await this.SubscribeSnsWebhookAsync(json);
+            if (await this.SubscribeSnsWebhookAsync(json))
+            {
+                return null;
+            }
 
             #region Check if "Raw message delivery" active
 
@@ -19,8 +22,7 @@ namespace Nager.AmazonSesNotification
             {
                 if (snsMessage.Type.Equals("Notification", StringComparison.OrdinalIgnoreCase))
                 {
-                    var item = JsonConvert.DeserializeObject<SesWebhook>(snsMessage.Message);
-                    return item;
+                    return this.Deserialize(snsMessage.Message);
                 }
 
                 return null;
@@ -28,38 +30,92 @@ namespace Nager.AmazonSesNotification
 
             #endregion
 
-            var item1 = JsonConvert.DeserializeObject<SesWebhook>(json);
-            return item1;
+            return this.Deserialize(json);
         }
 
-
-        private async Task SubscribeSnsWebhookAsync(string json)
+        public async Task<SesWebhook> ProcessNotificationAsync(SnsMessage snsMessage)
         {
-            var subscriptionConfirmation = JsonConvert.DeserializeObject<SnsMessage>(json);
-            if (subscriptionConfirmation == null)
+            if (await this.SubscribeSnsWebhookAsync(snsMessage))
             {
-                return;
+                return null;
             }
 
-            if (subscriptionConfirmation.Type == null)
+            if (snsMessage != null && snsMessage.Type != null)
             {
-                return;
+                if (snsMessage.Type.Equals("Notification", StringComparison.OrdinalIgnoreCase))
+                {
+                    return this.Deserialize(snsMessage.Message);
+                }
+
+                return null;
             }
 
-            if (!subscriptionConfirmation.Type.Equals("SubscriptionConfirmation", StringComparison.OrdinalIgnoreCase))
+            return null;
+        }
+
+        private SesWebhook Deserialize(string json)
+        {
+            try
             {
-                return;
+                var settings = new JsonSerializerSettings
+                {
+                    MissingMemberHandling = MissingMemberHandling.Error
+                };
+
+                var item = JsonConvert.DeserializeObject<SesWebhook>(json);
+                switch (item.NotificationType)
+                {
+                    case "Received":
+                        return JsonConvert.DeserializeObject<EmailReceivedWebhook>(json, settings);
+                    case "Bounce":
+                        return JsonConvert.DeserializeObject<EmailBounceWebhook>(json, settings);
+                    case "Complaint":
+                        return JsonConvert.DeserializeObject<EmailComplaintWebhook>(json, settings);
+                    case "Delivery":
+                        return JsonConvert.DeserializeObject<EmailDeliveredWebhook>(json, settings);
+                }
+            }
+            catch (Exception exception)
+            {
+                
             }
 
-            if (string.IsNullOrEmpty(subscriptionConfirmation.SubscribeURL))
+            return null;
+        }
+
+        private async Task<bool> SubscribeSnsWebhookAsync(string json)
+        {
+            var snsMessage = JsonConvert.DeserializeObject<SnsMessage>(json);
+            if (snsMessage == null)
+            {
+                return false;
+            }
+
+            return await this.SubscribeSnsWebhookAsync(snsMessage);
+        }
+
+        private async Task<bool> SubscribeSnsWebhookAsync(SnsMessage snsMessage)
+        {
+            if (snsMessage.Type == null)
+            {
+                return false;
+            }
+
+            if (!snsMessage.Type.Equals("SubscriptionConfirmation", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(snsMessage.SubscribeURL))
             {
                 //this._logger.LogError($"No subcribe url available {json}");
-                return;
+                return false;
             }
 
             using (var httpClient = new HttpClient())
             {
-                await httpClient.GetAsync(subscriptionConfirmation.SubscribeURL);
+                await httpClient.GetAsync(snsMessage.SubscribeURL);
+                return true;
             }
         }
     }
