@@ -1,7 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <Authors>Tino Hager</Authors>
+    <Description>Amazon Simple Email Service Notification Processing</Description>
+    <PackageProjectUrl>https://github.com/tinohager/Nager.AmazonSesNotification</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tinohager/Nager.AmazonSesNotification</RepositoryUrl>
+    <PackageTags>Amazon SES Notification</PackageTags>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
