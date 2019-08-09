@@ -1,0 +1,66 @@
+﻿{
+  "notificationType": "Bounce",
+  "bounce": {
+    "bounceType": "Permanent",
+    "bounceSubType": "General",
+    "bouncedRecipients": [
+      {
+        "emailAddress": "bounce@simulator.amazonses.com",
+        "action": "failed",
+        "status": "5.1.1",
+        "diagnosticCode": "smtp; 550 5.1.1 user unknown"
+      }
+    ],
+    "timestamp": "2019-08-09T12:17:34.920Z",
+    "feedbackId": "0102016c7650129b-d3ccd504-9563-45b2-9160-7e8d8d4fa641-000000",
+    "remoteMtaIp": "207.171.163.188",
+    "reportingMTA": "dsn; a6-88.smtp-out.eu-west-1.amazonses.com"
+  },
+  "mail": {
+    "timestamp": "2019-08-09T12:17:33.000Z",
+    "source": "from-user@domain.com",
+    "sourceArn": "arn:aws:ses:eu-west-1:381361520205:identity/domain.com",
+    "sourceIp": "0.0.0.0",
+    "sendingAccountId": "111111111111",
+    "messageId": "0102016c76500de8-ae40544d-d59d-4a05-9680-96e376ae77a4-000000",
+    "destination": [
+      "bounce@simulator.amazonses.com"
+    ],
+    "headersTruncated": false,
+    "headers": [
+      {
+        "name": "From",
+        "value": "from-user@domain.com"
+      },
+      {
+        "name": "To",
+        "value": "bounce@simulator.amazonses.com"
+      },
+      {
+        "name": "Subject",
+        "value": "test"
+      },
+      {
+        "name": "MIME-Version",
+        "value": "1.0"
+      },
+      {
+        "name": "Content-Type",
+        "value": "text/plain; charset=UTF-8"
+      },
+      {
+        "name": "Content-Transfer-Encoding",
+        "value": "7bit"
+      }
+    ],
+    "commonHeaders": {
+      "from": [
+        "from-user@domain.com"
+      ],
+      "to": [
+        "bounce@simulator.amazonses.com"
+      ],
+      "subject": "test"
+    }
+  }
+}

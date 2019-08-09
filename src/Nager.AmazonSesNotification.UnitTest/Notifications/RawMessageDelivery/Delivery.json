@@ -1,0 +1,60 @@
+﻿{
+  "notificationType": "Delivery",
+  "mail": {
+    "timestamp": "2019-08-09T12:21:34.788Z",
+    "source": "from-user@domain.com",
+    "sourceArn": "arn:aws:ses:eu-west-1:381361520205:identity/domain.com",
+    "sourceIp": "0.0.0.0",
+    "sendingAccountId": "111111111111",
+    "messageId": "0102016c7653bbc4-90011f1b-1e65-49ad-9818-a10d849bd228-000000",
+    "destination": [
+      "success@simulator.amazonses.com"
+    ],
+    "headersTruncated": false,
+    "headers": [
+      {
+        "name": "From",
+        "value": "from-user@domain.com"
+      },
+      {
+        "name": "To",
+        "value": "success@simulator.amazonses.com"
+      },
+      {
+        "name": "Subject",
+        "value": "test"
+      },
+      {
+        "name": "MIME-Version",
+        "value": "1.0"
+      },
+      {
+        "name": "Content-Type",
+        "value": "text/plain; charset=UTF-8"
+      },
+      {
+        "name": "Content-Transfer-Encoding",
+        "value": "7bit"
+      }
+    ],
+    "commonHeaders": {
+      "from": [
+        "from-user@domain.com"
+      ],
+      "to": [
+        "success@simulator.amazonses.com"
+      ],
+      "subject": "test"
+    }
+  },
+  "delivery": {
+    "timestamp": "2019-08-09T12:21:36.185Z",
+    "processingTimeMillis": 1397,
+    "recipients": [
+      "success@simulator.amazonses.com"
+    ],
+    "smtpResponse": "250 2.6.0 Message received",
+    "remoteMtaIp": "72.21.215.231",
+    "reportingMTA": "a6-30.smtp-out.eu-west-1.amazonses.com"
+  }
+}

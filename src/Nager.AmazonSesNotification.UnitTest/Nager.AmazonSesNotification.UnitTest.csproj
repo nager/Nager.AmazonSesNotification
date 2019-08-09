@@ -17,7 +17,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Notifications\Received.json">
+    <None Update="Notifications\Notification.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Notifications\RawMessageDelivery\Bounce.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Notifications\RawMessageDelivery\Complaint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Notifications\RawMessageDelivery\Delivery.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Notifications\SubscriptionConfirmation.json">

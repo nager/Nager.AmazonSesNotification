@@ -126,7 +126,7 @@
     },
     "action": {
       "type": "SNS",
-      "topicArn": "arn:aws:sns:eu-west-1:381361520205:ses-incoming",
+      "topicArn": "arn:aws:sns:eu-west-1:111111111111:ses-incoming",
       "encoding": "BASE64"
     }
   },

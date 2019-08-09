@@ -1,0 +1,11 @@
+{
+  "Type": "Notification",
+  "MessageId": "ee0f3657-7efe-5dde-a1df-6390244e8bbf",
+  "TopicArn": "arn:aws:sns:eu-west-1:381361520205:ses-delivery",
+  "Message": "",
+  "Timestamp": "2019-08-09T11:26:40.836Z",
+  "SignatureVersion": "1",
+  "Signature": "bgCbmR4MM0v4F0DQXttbkhYV/u047JVJIhbxiCCnbqhNRcHmRcOVpYbRmThBuZBNrjTWRxesXT6dN8Xj+kHVXH1XBblFSphQb0uwaKN3nnZqQ2w6ACIZpI/Li2ix/3gaWBjV6diZd96C0YBbapyfSIAj7vbtMU24LTIeJrlwh/bSwFc1Kvwae3ZqmOhV9tf4rZX9/0ItTwl15h+DzAk1KW1YpkCunrEFATkFllesDgt7wgZlsP1HTkV2g3o8O6due2068BxGfGkrQxCdS//L8WVUxDTtzMCbhEYQKhBxcx2X67JrtRTIDZIr67L3QaqXFMHEZrdcz9ShCcj/QuAngQ==",
+  "SigningCertURL": "https://sns.eu-west-1.amazonaws.com/SimpleNotificationService-6aa25d1f9d34305cd53efda11f913f9.pem",
+  "UnsubscribeURL": "https://sns.eu-west-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:eu-west-1:381361520205:ses-delivery:0a38c433-62a8-43f0-be1f-b38336c6d26c"
+}
