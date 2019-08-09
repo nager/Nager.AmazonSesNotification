@@ -9,6 +9,10 @@ The package is available on [nuget](https://www.nuget.org/packages/Nager.AmazonS
 PM> install-package Nager.AmazonSesNotification
 ```
 
+## Documentation
+ - [SES Documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html) 
+ - [Testing Email Sending in Amazon SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html)
+
 ## Recommended implementation
 ```cs
 [Route("SesNotification")]
