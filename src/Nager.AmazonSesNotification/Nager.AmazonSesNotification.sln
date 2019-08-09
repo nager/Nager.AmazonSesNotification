@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nager.AmazonSesNotification", "Nager.AmazonSesNotification\Nager.AmazonSesNotification.csproj", "{58B37DDC-A2FB-4C15-A280-E4BF0C220505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nager.AmazonSesNotification.UnitTest", "Nager.AmazonSesNotification.UnitTest\Nager.AmazonSesNotification.UnitTest.csproj", "{5CCB0D8E-3EB5-49C8-ADEF-B9B23F431494}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58B37DDC-A2FB-4C15-A280-E4BF0C220505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B37DDC-A2FB-4C15-A280-E4BF0C220505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B37DDC-A2FB-4C15-A280-E4BF0C220505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B37DDC-A2FB-4C15-A280-E4BF0C220505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCB0D8E-3EB5-49C8-ADEF-B9B23F431494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCB0D8E-3EB5-49C8-ADEF-B9B23F431494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCB0D8E-3EB5-49C8-ADEF-B9B23F431494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCB0D8E-3EB5-49C8-ADEF-B9B23F431494}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA9268B6-E125-4568-9770-5F2FF09F6E2B}
+	EndGlobalSection
+EndGlobal
