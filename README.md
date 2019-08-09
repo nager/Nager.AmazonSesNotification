@@ -1,6 +1,8 @@
 # Nager.AmazonSesNotification
 Amazon Simple Email Service Notification Processing
 
+This project is a receiver for `Amazon SES` http/https Notifications. It can handle the default format or "Raw message delivery". The system also automatic subscribe to the sns webhook.
+
 
 ```cs
 [Route("SesNotification")]
