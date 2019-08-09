@@ -7,7 +7,7 @@ configuration: Release
 before_build:
    - nuget restore src
 build:
-  project: src/Nager.Nager.AmazonSesNotification.sln
+  project: src/Nager.AmazonSesNotification.sln
   publish_nuget: true
   publish_nuget_symbols: true
   verbosity: normal
