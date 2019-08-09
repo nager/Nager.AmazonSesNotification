@@ -17,6 +17,8 @@ public async Task<IActionResult> SesNotificationAsync()
     
     var notificationProcessor = new NotificationProcessor();
     var result = await notificationProcessor.ProcessNotificationAsync(body);
+    
+    return StatusCode(StatusCodes.Status200OK);
  }
  ```
 
@@ -29,5 +31,7 @@ public async Task<IActionResult> SesNotificationAsync(SnsMessage snsMessage)
 {  
     var notificationProcessor = new NotificationProcessor();
     var result = await notificationProcessor.ProcessNotificationAsync(snsMessage);
+    
+    return StatusCode(StatusCodes.Status200OK);
  }
 ```
