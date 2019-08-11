@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nager.AmazonSesNotification.Model;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -27,7 +28,7 @@ namespace Nager.AmazonSesNotification.WebhookDemo.Controllers
             if (result.NotificationType == "Bounce")
             {
                 var webhook = result as EmailBounceWebhook;
-                if (webhook.Bounce.BounceType == "Hardbounce")
+                if (webhook.Bounce.BounceType.Equals("Permanent", StringComparison.OrdinalIgnoreCase))
                 {
 
                 }
