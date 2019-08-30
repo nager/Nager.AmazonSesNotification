@@ -7,16 +7,17 @@
     <PackageProjectUrl>https://github.com/tinohager/Nager.AmazonSesNotification</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tinohager/Nager.AmazonSesNotification</RepositoryUrl>
     <PackageTags>Amazon SES Notification</PackageTags>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="newtonsoft.json" Version="12.0.2" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net46'))" >
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net46'))">
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 

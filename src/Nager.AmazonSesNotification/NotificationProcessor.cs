@@ -59,7 +59,8 @@ namespace Nager.AmazonSesNotification
             {
                 var settings = new JsonSerializerSettings
                 {
-                    MissingMemberHandling = MissingMemberHandling.Error
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                    //MissingMemberHandling = MissingMemberHandling.Error
                 };
 
                 var item = JsonConvert.DeserializeObject<SesWebhook>(json);
